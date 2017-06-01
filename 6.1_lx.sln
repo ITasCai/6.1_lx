@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "委托", "委托\委托.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDeam", "MyDeam\MyDeam.csproj", "{629AC3EB-9592-4279-B622-83596471AA38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "事件", "事件\事件.csproj", "{225A9DFC-8F92-4B34-9AB3-8C309054EB7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{629AC3EB-9592-4279-B622-83596471AA38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{629AC3EB-9592-4279-B622-83596471AA38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{629AC3EB-9592-4279-B622-83596471AA38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{225A9DFC-8F92-4B34-9AB3-8C309054EB7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{225A9DFC-8F92-4B34-9AB3-8C309054EB7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{225A9DFC-8F92-4B34-9AB3-8C309054EB7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{225A9DFC-8F92-4B34-9AB3-8C309054EB7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

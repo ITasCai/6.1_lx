@@ -47,13 +47,13 @@ namespace 委托
 
 
 
-            
+
             #region 带返回值的委托
 
-           //Calculate c = new Calculate();
-           // CalDelegate cd = c.Add;
-           // int x = 10;int y = 55;
-           // Console.WriteLine(cd(ref x,ref y));
+            //Calculate c = new Calculate();
+            // CalDelegate cd = c.Add;
+            // int x = 10;int y = 55;
+            // Console.WriteLine(cd(ref x,ref y));
 
 
             #endregion
@@ -78,27 +78,82 @@ namespace 委托
 
             //OtherDelegate other=delegate
 
-         
-            PersonDelegate pd = (array,p) =>
-            {
-                for (int i = 0; i < p.Length; i++)
-                {
-                    string name = p[i].Name;
-                    array.Add(name);
-                }
-                return array.Count;
+
+            //PersonDelegate pd = (array,p) =>
+            //{
+            //    for (int i = 0; i < p.Length; i++)
+            //    {
+            //        string name = p[i].Name;
+            //        array.Add(name);
+            //    }
+            //    return array.Count;
+            //};
+
+            //ArrayList list = new ArrayList() { "哈哈","嘎嘎"};
+            ////Person p1 = new Person("回火", 22);
+            ////Person p2 = new Person("单火", 12);
+            //Person[] person = { new Person("狗蛋",44),new Person("偶偶",10)};
+            //int count = pd(list,person);
+            //Console.WriteLine(count);
+
+            //foreach (string item in list)
+            //{
+            //    Console.Write(item+" ");
+            //}
+            #endregion
+
+
+            #region 泛型委托
+            // MyDelegate<int> md = new MyDelegate<int>(new GenericDeam().GetResult);
+
+
+            //MinDelegate<string, int> min = x =>
+            //   {
+            //       int lengt = x.Length;
+            //       return lengt;
+            //   };
+
+            #endregion
+
+            #region 
+
+            // Action action = () => { Console.WriteLine("Action没参数"); };
+            // Action <int>action1 = x => { Console.WriteLine(x); };
+            // Action<int, string> action2 = (x, y) =>
+            //{
+            //    int number = y.Length;
+            //    x = number;
+            //    Console.WriteLine("字符串的长度："+x);
+
+            //};
+            // action1(222);
+            // action2(0,"seidsgjd");
+
+            //Func<int> func = () => { return DateTime.Now.Year; };
+            //Func<string, int> func1 = (x) => {
+            //    return x.Length;
+            //};
+
+            Func<Person, int[], List<string>, int> func2 = (x,y,z) => {
+                int count = y.Length + z.Count + 1;
+                //string str = x + y + z;
+                //return str.Length;
+                return count;
             };
+            //Console.WriteLine(func());
+            //Console.WriteLine(func1("aaasss"));
 
-            ArrayList list = new ArrayList() { "哈哈","嘎嘎"};
-            Person p1 = new Person("回火", 22);
-            Person p2 = new Person("单火", 12);
-            int count = pd(list,p1,p2);
-            Console.WriteLine(count);
 
-            foreach (string item in list)
-            {
-                Console.Write(item+" ");
-            }
+            Person p = new Person("狗蛋",22);
+            int[] arr = { 1, 2, 3, 4, 5, 6 };
+            List<string> list = new List<string>();
+            list.Add("蛋蛋");
+            Console.WriteLine(func2(p,arr,list));
+                    
+         
+                func2(p,arr,list);
+
+           // Console.WriteLine(func2("aa","vv","ccq"));
             #endregion
 
             Console.ReadKey();
