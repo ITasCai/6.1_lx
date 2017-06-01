@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,10 +50,10 @@ namespace 委托
             
             #region 带返回值的委托
 
-           Calculate c = new Calculate();
-            CalDelegate cd = c.Add;
-            int x = 10;int y = 55;
-            Console.WriteLine(cd(ref x,ref y));
+           //Calculate c = new Calculate();
+           // CalDelegate cd = c.Add;
+           // int x = 10;int y = 55;
+           // Console.WriteLine(cd(ref x,ref y));
 
 
             #endregion
@@ -60,17 +61,44 @@ namespace 委托
 
             #region 匿名方法
 
-            AnonymousDelegate ad = delegate (int number) { return number; };
-            Console.WriteLine(ad(5));
+            //AnonymousDelegate ad = delegate (int number) { return number; };
+            //Console.WriteLine(ad(5));
 
-          
-            ParamDelegate pd=default(int x,int[] array){
-                x = x + 2;
-                int max=array.Max();
-                return max;
+
+            //ParamDelegate pd= delegate (int x,int[] array){
+            //    x = x + 2;
+            //    int max=array.Max();
+            //    return max;
+            //};
+            //int result = pd(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+            #endregion
+
+            #region Lambda表达式
+
+            //OtherDelegate other=delegate
+
+         
+            PersonDelegate pd = (array,p) =>
+            {
+                for (int i = 0; i < p.Length; i++)
+                {
+                    string name = p[i].Name;
+                    array.Add(name);
+                }
+                return array.Count;
             };
-            int result = pd(1, 2, 3, 4, 5, 6, 7, 8, 9);
 
+            ArrayList list = new ArrayList() { "哈哈","嘎嘎"};
+            Person p1 = new Person("回火", 22);
+            Person p2 = new Person("单火", 12);
+            int count = pd(list,p1,p2);
+            Console.WriteLine(count);
+
+            foreach (string item in list)
+            {
+                Console.Write(item+" ");
+            }
             #endregion
 
             Console.ReadKey();
